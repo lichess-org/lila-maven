@@ -14,9 +14,8 @@ cd ..
 
 git clone --depth 1 https://github.com/ornicar/Kamon --branch lila
 cd Kamon
-sbt publish-local
+sbt -DpublishTo=$repo_dir publish
 cd ..
-cp -rv ~/.ivy2/local/io.kamon "$repo_dir/"
 
 git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
 cd maxmind-geoip2-scala
