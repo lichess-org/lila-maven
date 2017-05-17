@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="com.sanoma.cda" module="maxmind-geoip2-scala_2.11" revision="1.2.3-THIB" status="release" publication="20170517122521">
+		<description>
+		maxmind-geoip2-scala
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		
+		
+		
+		
+		<conf name="sources" visibility="public" description=""/>
+		<conf name="docs" visibility="public" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		
+	</configurations>
+	<publications>
+		<artifact name="maxmind-geoip2-scala_2.11" type="pom" ext="pom" conf="pom"/>
+		<artifact name="maxmind-geoip2-scala_2.11" type="jar" ext="jar" conf="compile"/>
+		<artifact name="maxmind-geoip2-scala_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="maxmind-geoip2-scala_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		
+		<dependency org="org.scala-lang" name="scala-library" rev="2.11.7" conf="compile->default(compile)"/>
+		<dependency org="com.maxmind.geoip2" name="geoip2" rev="0.8.0" conf="compile->default(compile)"/>
+		<dependency org="org.scalacheck" name="scalacheck_2.11" rev="1.10.0" conf="test->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.1" conf="test->default(compile)"/>
+	</dependencies>
+</ivy-module>

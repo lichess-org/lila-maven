@@ -19,4 +19,10 @@ sbt publish-local
 cd ..
 cp -rv ~/.ivy2/local/io.kamon "$repo_dir/"
 
+git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
+cd maxmind-geoip2-scala
+sbt publish-local
+cd ..
+cp -rv ~/.ivy2/local/com.sanoma.cda "$repo_dir/"
+
 rm -rf "$build_dir"
