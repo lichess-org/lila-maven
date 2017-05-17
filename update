@@ -7,21 +7,22 @@ build_dir=$(mktemp -d)
 echo "Building in $build_dir"
 cd "$build_dir"
 
-git clone --depth 1 https://github.com/ornicar/scalalib
-cd scalalib
-sbt -DpublishTo=$repo_dir publish
-cd ..
+# git clone --depth 1 https://github.com/ornicar/scalalib
+# cd scalalib
+# sbt -DpublishTo=$repo_dir publish
+# cd ..
 
-git clone --depth 1 https://github.com/ornicar/Kamon --branch lila
-cd Kamon
-sbt -DpublishTo=$repo_dir publish
-cd ..
+# git clone --depth 1 https://github.com/ornicar/Kamon --branch lila
+# cd Kamon
+# sbt -DpublishTo=$repo_dir publish
+# cd ..
 
 git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
 cd maxmind-geoip2-scala
-sbt publish-local
+sbt -DpublishTo=$repo_dir publish
 cd ..
-cp -rv ~/.ivy2/local/com.sanoma.cda "$repo_dir/"
+
+exit;
 
 git clone https://github.com/ornicar/scala-kit --branch lichess-fork
 cd scala-kit
