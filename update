@@ -25,4 +25,11 @@ sbt publish-local
 cd ..
 cp -rv ~/.ivy2/local/com.sanoma.cda "$repo_dir/"
 
+git clone https://github.com/ornicar/scala-kit --branch lichess-fork
+cd scala-kit
+git checkout b019b3a2522d3f1697c39ec0c79e88c18ea49a91
+sbt -Dversion=1.2.11-THIB publish-local
+cd ..
+cp -rv ~/.ivy2/local/io.prismic "$repo_dir/"
+
 rm -rf "$build_dir"
