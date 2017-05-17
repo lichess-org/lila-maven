@@ -1,0 +1,16 @@
+#!/bin/sh
+
+repo_dir=$(pwd)
+echo "Updating $repo_dir"
+
+build_dir=$(mktemp -d)
+echo "Building in $build_dir"
+cd "$build_dir"
+
+git clone --depth 1 https://github.com/ornicar/scalalib
+cd scalalib
+sbt publish-local
+cd ..
+cp -rv ~/.ivy2/local/com.github.ornicar "$repo_dir/"
+
+rm -rf "$build_dir"
