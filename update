@@ -7,6 +7,14 @@ build_dir=$(mktemp -d)
 echo "Building in $build_dir"
 cd "$build_dir"
 
+# used by lichess-db
+git clone --depth 1 https://github.com/ornicar/scalachess
+cd scalachess
+sbt -DpublishTo=$repo_dir publish
+cd ..
+
+exit
+
 git clone --depth 1 https://github.com/ornicar/scalalib
 cd scalalib
 sbt -DpublishTo=$repo_dir publish
