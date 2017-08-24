@@ -1,5 +1,9 @@
 #!/bin/sh
 
+target=$1
+
+export JAVA_OPTS="-Xms1024M -Xmx1024M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+
 repo_dir=$(pwd)
 echo "Updating $repo_dir"
 
@@ -7,30 +11,48 @@ build_dir=$(mktemp -d)
 echo "Building in $build_dir"
 cd "$build_dir"
 
-# used by lichess-db
-git clone --depth 1 https://github.com/ornicar/scalachess
-cd scalachess
-sbt -DpublishTo=$repo_dir +publish
-cd ..
+if [ -z $target ] || [ $target = "play" ]; then
+  git clone --depth 1 https://github.com/ornicar/playframework --branch 2.4.x
+  cd playframework
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+  exit
+fi
 
-git clone --depth 1 https://github.com/ornicar/scalalib
-cd scalalib
-sbt -DpublishTo=$repo_dir +publish
-cd ..
+if [ -z $target ] || [ $target = "scalachess" ]; then
+  # used by lichess-db
+  git clone --depth 1 https://github.com/ornicar/scalachess
+  cd scalachess
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
 
-git clone --depth 1 https://github.com/ornicar/Kamon --branch lila
-cd Kamon
-sbt -DpublishTo=$repo_dir publish
-cd ..
+if [ -z $target ] || [ $target = "scalalib" ]; then
+  git clone --depth 1 https://github.com/ornicar/scalalib
+  cd scalalib
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
 
-git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
-cd maxmind-geoip2-scala
-sbt -DpublishTo=$repo_dir publish
-cd ..
+if [ -z $target ] || [ $target = "kamon" ]; then
+  git clone --depth 1 https://github.com/ornicar/Kamon --branch lila
+  cd Kamon
+  sbt -DpublishTo=$repo_dir publish
+  cd ..
+fi
 
-git clone https://github.com/ornicar/scala-kit --branch lichess-fork
-cd scala-kit
-sbt -Dversion=1.2.11-THIB -DpublishTo=$repo_dir publish
-cd ..
+if [ -z $target ] || [ $target = "geoip" ]; then
+  git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
+  cd maxmind-geoip2-scala
+  sbt -DpublishTo=$repo_dir publish
+  cd ..
+fi
+
+if [ -z $target ] || [ $target = "prismic" ]; then
+  git clone https://github.com/ornicar/scala-kit --branch lichess-fork
+  cd scala-kit
+  sbt -Dversion=1.2.11-THIB -DpublishTo=$repo_dir publish
+  cd ..
+fi
 
 rm -rf "$build_dir"
