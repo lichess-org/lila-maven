@@ -51,7 +51,7 @@ fi
 if [ -z $target ] || [ $target = "prismic" ]; then
   git clone https://github.com/ornicar/scala-kit --branch lichess-fork
   cd scala-kit
-  sbt -Dversion=1.2.11-THIB -DpublishTo=$repo_dir publish
+  sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
 
