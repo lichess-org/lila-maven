@@ -16,7 +16,6 @@ if [ -z $target ] || [ $target = "play" ]; then
   cd playframework
   sbt -DpublishTo=$repo_dir +publish
   cd ..
-  exit
 fi
 
 if [ -z $target ] || [ $target = "scalachess" ]; then
