@@ -2,7 +2,8 @@
 
 target=$1
 
-export JAVA_OPTS="-Xms1024M -Xmx1024M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+export JAVA_OPTS=""
+export SBT_OPTS="-Xms1024M -Xmx1024M"
 
 repo_dir=$(pwd)
 echo "Updating $repo_dir"
