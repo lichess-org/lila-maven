@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.prismic</groupId>
+    <artifactId>scala-kit_2.11</artifactId>
+    <packaging>jar</packaging>
+    <description>scala-kit</description>
+    <version>1.2.13-THIB211</version>
+    <name>scala-kit</name>
+    <organization>
+        <name>io.prismic</name>
+    </organization>
+    <url>https://github.com/prismicio/scala-kit</url>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:github.com/prismicio/scala-kit.git</connection>
+        <developerConnection>scm:git:git@github.com:prismicio/scala-kit.git</developerConnection>
+        <url>github.com/prismicio/scala-kit.git</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Prismic.io Team</name>
+            <email>contact@prismic.io</email>
+            <organization>Prismic.io</organization>
+            <organizationUrl>http://prismic.io</organizationUrl>
+        </developer>
+    </developers>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-json_2.11</artifactId>
+            <version>2.4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-ws_2.11</artifactId>
+            <version>2.4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2_2.11</artifactId>
+            <version>2.3.13</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>Typesaferepositoryreleases</id>
+            <name>Typesafe repository releases</name>
+            <url>http://repo.typesafe.com/typesafe/releases/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>Sonatypereleases</id>
+            <name>Sonatype releases</name>
+            <url>http://oss.sonatype.org/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+</project>
