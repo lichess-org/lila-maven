@@ -72,7 +72,7 @@ fi
 if [ -z $target ] || [ $target = "compression" ]; then
   git clone --depth 1 https://github.com/lichess-org/compression
   cd compression
-  sbt -DpublishTo=$repo_dir +publish
+  sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
 
