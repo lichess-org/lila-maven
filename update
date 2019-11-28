@@ -12,12 +12,18 @@ build_dir=$(mktemp -d)
 echo "Building in $build_dir"
 cd "$build_dir"
 
-if [ -z $target ] || [ $target = "play" ]; then
-  git clone --depth 1 https://github.com/ornicar/playframework --branch 2.4.x
-  cd playframework
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
-fi
+java8() {
+  export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
+  java -version
+}
+java11() {
+  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
+  java -version
+}
+java13() {
+  export PATH="/usr/lib/jvm/java-13-openjdk/bin/:$PATH"
+  java -version
+}
 
 if [ -z $target ] || [ $target = "scalachess" ]; then
   # used by lichess-db
@@ -67,6 +73,14 @@ if [ -z $target ] || [ $target = "compression" ]; then
   git clone --depth 1 https://github.com/lichess-org/compression
   cd compression
   sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
+
+if [ -z $target ] || [ $target = "scrimage" ]; then
+  java8
+  git clone ~/scrimage --branch release/2.1.x
+  cd scrimage
+  sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
 
