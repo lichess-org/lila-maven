@@ -63,7 +63,7 @@ if [ -z $target ] || [ $target = "geoip" ]; then
 fi
 
 if [ -z $target ] || [ $target = "prismic" ]; then
-  git clone https://github.com/ornicar/scala-kit --branch lichess-fork-211
+  git clone https://github.com/ornicar/scala-kit --branch lichess-fork-213
   cd scala-kit
   sbt -DpublishTo=$repo_dir publish
   cd ..
