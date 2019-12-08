@@ -90,4 +90,12 @@ if [ -z $target ] || [ $target = "hasher" ]; then
   cd ..
 fi
 
+if [ -z $target ] || [ $target = "play-autoconfig" ]; then
+  java13
+  git clone --depth 1 https://github.com/ornicar/play-autoconfig --branch lila
+  cd play-autoconfig
+  sbt -DpublishTo=$repo_dir publish
+  cd ..
+fi
+
 rm -rf "$build_dir"
