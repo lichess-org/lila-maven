@@ -46,9 +46,9 @@ if [ -z $target ] || [ $target = "scalalib" ]; then
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "kamon" ]; then
-  git clone --depth 1 https://github.com/ornicar/Kamon --branch lila
-  cd Kamon
+if [ -z $target ] || [ $target = "kamon-influxdb" ]; then
+  git clone --depth 1 https://github.com/ornicar/Kamon-influxdb --branch lila
+  cd Kamon-influxdb
   sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
