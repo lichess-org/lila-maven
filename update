@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 target=$1
 
@@ -20,8 +20,8 @@ java11() {
   export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
   java -version
 }
-java13() {
-  export PATH="/usr/lib/jvm/java-13-openjdk/bin/:$PATH"
+java14() {
+  export PATH="/usr/lib/jvm/java-14-openjdk/bin/:$PATH"
   java -version
 }
 
@@ -95,6 +95,16 @@ if [ -z $target ] || [ $target = "play-autoconfig" ]; then
   git clone --depth 1 https://github.com/ornicar/play-autoconfig --branch lila
   cd play-autoconfig
   sbt -DpublishTo=$repo_dir publish
+  cd ..
+fi
+
+if [ -z $target ] || [ $target = "playframework" ]; then
+  version=2.8.2-lila_0.2
+  git clone --depth 1 https://github.com/ornicar/playframework-lila
+  cd playframework-lila
+  sbt 'publishLocal;publish'
+  cp -r ~/.ivy2/local/com.typesafe.play/sbt-plugin $repo_dir/com.typesafe.play/
+  cp -r target/sonatype-staging/$version/* $repo_dir/
   cd ..
 fi
 
