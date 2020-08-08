@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.2-lila_0.1" status="release" publication="20200808083832" e:sbtVersion="1.0" e:scalaVersion="2.12">
+  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.2-lila_0.1" status="release" publication="20200808090355" e:sbtVersion="1.0" e:scalaVersion="2.12">
     <description homepage="https://playframework.com">Sbt-Plugin</description>
   </info>
   <configurations>
@@ -42,9 +42,7 @@
     <dependency org="com.lightbend.play" name="play-file-watch_2.12" rev="1.1.12" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-twirl" rev="1.5.0" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-native-packager" rev="1.7.4" conf="compile->default(compile)"> </dependency>
-    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.lightbend.sbt" name="sbt-javaagent" rev="0.1.5" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-web" rev="1.4.4" conf="compile->default(compile)"> </dependency>
-    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-js-engine" rev="1.2.3" conf="compile->default(compile)"> </dependency>
     <dependency org="ch.qos.logback" name="logback-classic" rev="1.2.3" conf="test->default(compile)"> </dependency>
     <dependency org="org.specs2" name="specs2-core_2.12" rev="4.10.2" conf="test->default(compile)"> </dependency>
     <dependency org="org.specs2" name="specs2-junit_2.12" rev="4.10.2" conf="test->default(compile)"> </dependency>
