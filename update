@@ -104,6 +104,8 @@ if [ -z $target ] || [ $target = "playframework" ]; then
   cd playframework-lila
   sbt 'publishLocal;publish'
   cp -r ~/.ivy2/local/com.typesafe.play/sbt-plugin $repo_dir/com.typesafe.play/
+  cp -r ~/.ivy2/local/com.typesafe.play/play-exceptions $repo_dir/com.typesafe.play/
+  cp -r ~/.ivy2/local/com.typesafe.play/sbt-routes-compiler_2.12 $repo_dir/com.typesafe.play/
   cp -r target/sonatype-staging/$version/* $repo_dir/
   cd ..
 fi
