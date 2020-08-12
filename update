@@ -99,7 +99,7 @@ if [ -z $target ] || [ $target = "play-autoconfig" ]; then
 fi
 
 if [ -z $target ] || [ $target = "playframework" ]; then
-  version=2.8.2-lila_0.3
+  version=2.8.2-lila_0.4
   git clone --depth 1 https://github.com/ornicar/playframework-lila
   cd playframework-lila
   sbt 'publishLocal;publish'
