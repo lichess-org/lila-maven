@@ -27,14 +27,7 @@ java14() {
 }
 
 if [ -z $target ] || [ $target = "scalachess" ]; then
-  git clone --depth 1 https://github.com/ornicar/scalachess
-  cd scalachess
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "scalachess9" ]; then
-  git clone --depth 1 https://github.com/ornicar/scalachess --branch v9
+  git clone --depth 1 https://github.com/ornicar/scalachess --branch $branch
   cd scalachess
   sbt -DpublishTo=$repo_dir +publish
   cd ..
