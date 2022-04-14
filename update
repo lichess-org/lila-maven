@@ -77,8 +77,7 @@ if [ -z $target ] || [ $target = "scrimage" ]; then
 fi
 
 if [ -z $target ] || [ $target = "hasher" ]; then
-  java8
-  git clone --depth 1 https://github.com/ornicar/Hasher --branch lila
+  git clone --depth 1 https://github.com/ornicar/Hasher --branch $branch
   cd Hasher
   sbt -DpublishTo=$repo_dir +publish
   cd ..
