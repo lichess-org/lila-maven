@@ -62,7 +62,7 @@ if [ -z $target ] || [ $target = "prismic" ]; then
 fi
 
 if [ -z $target ] || [ $target = "compression" ]; then
-  git clone --depth 1 https://github.com/lichess-org/compression
+  git clone --depth 1 https://github.com/lichess-org/compression $branch
   cd compression
   sbt -DpublishTo=$repo_dir publish
   cd ..
