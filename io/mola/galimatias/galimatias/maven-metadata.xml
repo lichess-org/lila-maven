@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.mola.galimatias</groupId>
+  <artifactId>galimatias</artifactId>
+  <versioning>
+    <release>0.2.2-NF</release>
+    <versions>
+      <version>0.2.2-NF</version>
+    </versions>
+    <lastUpdated>20220703115443</lastUpdated>
+  </versioning>
+</metadata>
