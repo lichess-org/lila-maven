@@ -83,6 +83,13 @@ if [ -z $target ] || [ $target = "hasher" ]; then
   cd ..
 fi
 
+if [ -z $target ] || [ $target = "galimatias" ]; then
+  git clone --depth 1 https://github.com/niklasf/galimatias
+  cd galimatias
+  mvn deploy -DaltDeploymentRepository="snapshot-repo::default::file:$repo_dir"
+  cd ..
+fi
+
 if [ -z $target ] || [ $target = "play-autoconfig" ]; then
   java13
   git clone --depth 1 https://github.com/ornicar/play-autoconfig --branch lila
