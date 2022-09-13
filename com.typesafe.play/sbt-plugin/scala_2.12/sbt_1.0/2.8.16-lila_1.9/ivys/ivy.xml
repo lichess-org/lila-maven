@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.16-lila_1.9" status="release" publication="20220418194125" e:sbtVersion="1.0" e:scalaVersion="2.12">
+  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.16-lila_1.9" status="integration" publication="20220913195823" e:sbtVersion="1.0" e:scalaVersion="2.12">
     <description homepage="https://github.com/playframework/playframework">Sbt-Plugin</description>
   </info>
   <configurations>
@@ -41,12 +41,12 @@
     <dependency org="org.scala-lang" name="scala-reflect" rev="2.12.15" conf="provided->default(compile)"> </dependency>
     <dependency org="com.typesafe" name="config" rev="1.4.2" conf="compile->default(compile)"> </dependency>
     <dependency org="org.slf4j" name="slf4j-simple" rev="1.7.36" conf="compile->default(compile)"> </dependency>
-    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.play" name="sbt-twirl" rev="1.6.0-M1" conf="compile->default(compile)"> </dependency>
+    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.play" name="sbt-twirl" rev="1.6.0-M6" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.github.sbt" name="sbt-native-packager" rev="1.9.9" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-web" rev="1.4.4" conf="compile->default(compile)"> </dependency>
     <dependency org="ch.qos.logback" name="logback-classic" rev="1.2.11" conf="test->default(compile)"> </dependency>
-    <dependency org="org.specs2" name="specs2-core_2.12" rev="4.13.3" conf="test->default(compile)"> </dependency>
-    <dependency org="org.specs2" name="specs2-junit_2.12" rev="4.13.3" conf="test->default(compile)"> </dependency>
-    <dependency org="org.specs2" name="specs2-mock_2.12" rev="4.13.3" conf="test->default(compile)"> </dependency>
+    <dependency org="org.specs2" name="specs2-core_2.12" rev="4.15.0" conf="test->default(compile)"> </dependency>
+    <dependency org="org.specs2" name="specs2-junit_2.12" rev="4.15.0" conf="test->default(compile)"> </dependency>
+    <dependency org="org.specs2" name="specs2-mock_2.12" rev="4.15.0" conf="test->default(compile)"> </dependency>
   </dependencies>
 </ivy-module>

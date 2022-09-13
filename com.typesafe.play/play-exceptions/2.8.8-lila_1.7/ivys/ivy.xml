@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="play-exceptions" revision="2.8.8-lila_1.7" status="release" publication="20210826112729">
+  <info organisation="com.typesafe.play" module="play-exceptions" revision="2.8.8-lila_1.7" status="release" publication="20210826114531">
     <description homepage="https://github.com/playframework/playframework">Play-Exceptions</description>
   </info>
   <configurations>
@@ -14,15 +14,14 @@
     <conf name="compile" visibility="public" description=""/>
     <conf extends="test,optional,provided" name="test-internal" visibility="public" description=""/>
     <conf name="scala-tool" visibility="public" description=""/>
-    <conf name="scala-doc-tool" visibility="public" description=""/>
     <conf name="sources" visibility="public" description=""/>
     <conf extends="compile" name="runtime" visibility="public" description=""/>
     <conf extends="runtime,optional" name="runtime-internal" visibility="public" description=""/>
   </configurations>
   <publications>
-    <artifact name="play-exceptions" type="jar" ext="jar" conf="compile"/>
     <artifact e:classifier="sources" name="play-exceptions" type="src" ext="jar" conf="sources"/>
     <artifact e:classifier="javadoc" name="play-exceptions" type="doc" ext="jar" conf="docs"/>
+    <artifact name="play-exceptions" type="jar" ext="jar" conf="compile"/>
     <artifact name="play-exceptions" type="pom" ext="pom" conf="pom"/>
   </publications>
   <dependencies>

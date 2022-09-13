@@ -110,7 +110,7 @@ if [ -z $target ] || [ $target = "playframework" ]; then
   cd ..
 fi
 
-# rm -rf "$build_dir"
+rm -rf "$build_dir"
 
 git add .
 git commit -m "Publish $target $branch"

@@ -33,7 +33,7 @@
     <properties>
         <scalaVersion>2.12</scalaVersion>
         <sbtVersion>1.0</sbtVersion>
-        <extraDependencyAttributes xml:space="preserve">+e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-twirl:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.typesafe.play:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.6.0-M1:#@#:
+        <extraDependencyAttributes xml:space="preserve">+e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-twirl:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.typesafe.play:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.6.0-M6:#@#:
 +e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-native-packager:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.github.sbt:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.9.9:#@#:
 +e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-web:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.typesafe.sbt:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.4.4:#@#:</extraDependencyAttributes>
     </properties>
@@ -79,7 +79,7 @@
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>sbt-twirl</artifactId>
-            <version>1.6.0-M1</version>
+            <version>1.6.0-M6</version>
         </dependency>
         <dependency>
             <groupId>com.github.sbt</groupId>
@@ -100,19 +100,19 @@
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-core_2.12</artifactId>
-            <version>4.13.3</version>
+            <version>4.15.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-junit_2.12</artifactId>
-            <version>4.13.3</version>
+            <version>4.15.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-mock_2.12</artifactId>
-            <version>4.13.3</version>
+            <version>4.15.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
