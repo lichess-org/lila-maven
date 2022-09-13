@@ -99,18 +99,18 @@ if [ -z $target ] || [ $target = "play-autoconfig" ]; then
 fi
 
 if [ -z $target ] || [ $target = "playframework" ]; then
-  version=2.8.8-lila_1.8
-  git clone --depth 1 https://github.com/ornicar/playframework-lila
+  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch main
   cd playframework-lila
   sbt 'publishLocal;publish'
   cp -r ~/.ivy2/local/com.typesafe.play/sbt-plugin $repo_dir/com.typesafe.play/
   cp -r ~/.ivy2/local/com.typesafe.play/play-exceptions $repo_dir/com.typesafe.play/
   cp -r ~/.ivy2/local/com.typesafe.play/sbt-routes-compiler_2.12 $repo_dir/com.typesafe.play/
+  mv target/sonatype-staging/0.* target/sonatype-staging/0.1.0-SNAPSHOT
   cp -r target/sonatype-staging/0.1.0-SNAPSHOT/* $repo_dir/
   cd ..
 fi
 
-rm -rf "$build_dir"
+# rm -rf "$build_dir"
 
 git add .
 git commit -m "Publish $target $branch"
