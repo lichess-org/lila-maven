@@ -20,11 +20,6 @@
         <url>https://github.com/playframework/playframework</url>
     </organization>
     <scm>
-        <url>https://github.com/ornicar/playframework-lila</url>
-        <connection>scm:git:https://github.com/ornicar/playframework-lila.git</connection>
-        <developerConnection>scm:git:git@github.com:ornicar/playframework-lila.git</developerConnection>
-    </scm>
-    <scm>
         <url>https://github.com/playframework/playframework</url>
         <connection>scm:git:git@github.com:playframework/playframework.git</connection>
     </scm>
