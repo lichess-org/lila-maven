@@ -99,7 +99,8 @@ if [ -z $target ] || [ $target = "play-autoconfig" ]; then
 fi
 
 if [ -z $target ] || [ $target = "playframework" ]; then
-  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch main
+  branch="${2:-main}"
+  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch $branch
   cd playframework-lila
   sbt 'publishLocal;publish'
   cp -r ~/.ivy2/local/com.typesafe.play/sbt-plugin $repo_dir/com.typesafe.play/
