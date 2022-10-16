@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="sbt-routes-compiler_2.12" revision="2.8.16-lila_1.13.1" status="integration" publication="20221016224302">
+  <info organisation="com.typesafe.play" module="sbt-routes-compiler_2.12" revision="2.8.16-lila_1.13.1" status="integration" publication="20221016224640">
     <description homepage="https://github.com/playframework/playframework">Sbt-Routes-Compiler</description>
   </info>
   <configurations>
