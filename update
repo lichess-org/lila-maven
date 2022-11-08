@@ -90,11 +90,10 @@ if [ -z $target ] || [ $target = "galimatias" ]; then
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "play-autoconfig" ]; then
-  java13
-  git clone --depth 1 https://github.com/ornicar/play-autoconfig --branch lila
-  cd play-autoconfig
-  sbt -DpublishTo=$repo_dir publish
+if [ -z $target ] || [ $target = "play-ws" ]; then
+  git clone --depth 1 https://github.com/ornicar/play-ws --branch $branch
+  cd play-ws
+  sbt -DpublishTo=$repo_dir '++ 3.2.1; publish'
   cd ..
 fi
 

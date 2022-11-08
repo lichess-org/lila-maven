@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.typesafe.play</groupId>
+    <artifactId>shaded-asynchttpclient</artifactId>
+    <packaging>jar</packaging>
+    <description>shaded-asynchttpclient</description>
+    <url>https://www.playframework.com/documentation/latest/</url>
+    <version>0.1.0-SNAPSHOT</version>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>http://opensource.org/licenses/Apache-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>shaded-asynchttpclient</name>
+    <organization>
+        <name>Lightbend Inc.</name>
+        <url>https://www.lightbend.com/</url>
+    </organization>
+    <scm>
+        <url>https://github.com/playframework/play-ws</url>
+        <connection>git@github.com:playframework/play-ws.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <id>contributors</id>
+            <name>Contributors</name>
+            <url>https://gitter.im/playframework/contributors</url>
+            <email>https://gitter.im/playframework/</email>
+        </developer>
+        <developer>
+            <id>contributors</id>
+            <name>Contributors</name>
+            <url>https://gitter.im/playframework/contributors</url>
+            <email>https://gitter.im/playframework/</email>
+        </developer>
+    </developers>
+</project>
