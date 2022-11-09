@@ -36,6 +36,7 @@
         <scalaVersion>2.12</scalaVersion>
         <sbtVersion>1.0</sbtVersion>
         <extraDependencyAttributes xml:space="preserve">+e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-twirl:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.typesafe.play:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.6.0-M7:#@#:
++e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-native-packager:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.github.sbt:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.9.11:#@#:
 +e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-web:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.typesafe.sbt:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.4.4:#@#:</extraDependencyAttributes>
     </properties>
     <dependencies>
@@ -75,6 +76,11 @@
             <groupId>com.typesafe.play</groupId>
             <artifactId>sbt-twirl</artifactId>
             <version>1.6.0-M7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sbt</groupId>
+            <artifactId>sbt-native-packager</artifactId>
+            <version>1.9.11</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.sbt</groupId>

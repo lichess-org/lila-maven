@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.18-lila_1.19" status="integration" publication="20221109214130" e:sbtVersion="1.0" e:scalaVersion="2.12">
+  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.18-lila_1.19" status="integration" publication="20221109214612" e:sbtVersion="1.0" e:scalaVersion="2.12">
     <description homepage="https://github.com/playframework/playframework">Sbt-Plugin</description>
   </info>
   <configurations>
@@ -41,6 +41,7 @@
     <dependency org="com.typesafe" name="config" rev="1.4.2" conf="compile->default(compile)"> </dependency>
     <dependency org="org.slf4j" name="slf4j-simple" rev="2.0.3" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.play" name="sbt-twirl" rev="1.6.0-M7" conf="compile->default(compile)"> </dependency>
+    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.github.sbt" name="sbt-native-packager" rev="1.9.11" conf="compile->default(compile)"> </dependency>
     <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-web" rev="1.4.4" conf="compile->default(compile)"> </dependency>
     <dependency org="ch.qos.logback" name="logback-classic" rev="1.4.4" conf="test->default(compile)"> </dependency>
     <dependency org="org.specs2" name="specs2-core_2.12" rev="4.17.0" conf="test->default(compile)"> </dependency>
