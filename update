@@ -110,6 +110,13 @@ if [ -z $target ] || [ $target = "playframework" ]; then
   cd ..
 fi
 
+if [ -z $target ] || [ $target = "bloom-filter" ]; then
+  git clone --depth 1 https://github.com/ornicar/bloom-filter-scala --branch $branch
+  cd bloom-filter-scala
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
+
 rm -rf "$build_dir"
 
 cd $repo_dir
