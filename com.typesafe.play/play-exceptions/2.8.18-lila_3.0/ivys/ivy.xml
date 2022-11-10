@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="play-exceptions" revision="2.8.18-lila_3.0" status="integration" publication="20221109214853">
+  <info organisation="com.typesafe.play" module="play-exceptions" revision="2.8.18-lila_3.0" status="integration" publication="20221108083240">
     <description homepage="https://github.com/playframework/playframework">Play-Exceptions</description>
   </info>
   <configurations>
