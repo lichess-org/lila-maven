@@ -91,7 +91,7 @@ if [ -z $target ] || [ $target = "galimatias" ]; then
 fi
 
 if [ -z $target ] || [ $target = "play-json" ]; then
-	git clone --depth 1 https://github.com/playframework/play-json --branch $branch
+	git clone --depth 1 https://github.com/playframework/play-json --branch main
 	cd play-json
 	sbt -DpublishTo=$repo_dir '++ 3.3.0; publish'
 	cd ..
