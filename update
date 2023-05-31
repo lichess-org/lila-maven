@@ -14,107 +14,114 @@ echo "Building in $build_dir"
 cd "$build_dir"
 
 java8() {
-  export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
-  java -version
+	export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
+	java -version
 }
 java11() {
-  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
-  java -version
+	export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
+	java -version
 }
 java14() {
-  export PATH="/usr/lib/jvm/java-14-openjdk/bin/:$PATH"
-  java -version
+	export PATH="/usr/lib/jvm/java-14-openjdk/bin/:$PATH"
+	java -version
 }
 
 if [ -z $target ] || [ $target = "scalachess" ]; then
-  git clone --depth 1 https://github.com/ornicar/scalachess --branch $branch
-  cd scalachess
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/scalachess --branch $branch
+	cd scalachess
+	sbt -DpublishTo=$repo_dir +publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "scalalib" ]; then
-  git clone --depth 1 https://github.com/ornicar/scalalib --branch $branch
-  cd scalalib
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/scalalib --branch $branch
+	cd scalalib
+	sbt -DpublishTo=$repo_dir +publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "kamon-influxdb" ]; then
-  git clone --depth 1 https://github.com/ornicar/Kamon-influxdb --branch lila
-  cd Kamon-influxdb
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/Kamon-influxdb --branch lila
+	cd Kamon-influxdb
+	sbt -DpublishTo=$repo_dir publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "geoip" ]; then
-  git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
-  cd maxmind-geoip2-scala
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
+	cd maxmind-geoip2-scala
+	sbt -DpublishTo=$repo_dir publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "prismic" ]; then
-  git clone https://github.com/ornicar/scala-kit --branch $branch
-  cd scala-kit
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
+	git clone https://github.com/ornicar/scala-kit --branch $branch
+	cd scala-kit
+	sbt -DpublishTo=$repo_dir publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "compression" ]; then
-  git clone --depth 1 https://github.com/lichess-org/compression --branch $branch
-  cd compression
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
+	git clone --depth 1 https://github.com/lichess-org/compression --branch $branch
+	cd compression
+	sbt -DpublishTo=$repo_dir publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "scrimage" ]; then
-  java8
-  git clone ~/scrimage --branch release/2.1.x
-  cd scrimage
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
+	java8
+	git clone ~/scrimage --branch release/2.1.x
+	cd scrimage
+	sbt -DpublishTo=$repo_dir publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "hasher" ]; then
-  git clone --depth 1 https://github.com/ornicar/Hasher --branch $branch
-  cd Hasher
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/Hasher --branch $branch
+	cd Hasher
+	sbt -DpublishTo=$repo_dir +publish
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "galimatias" ]; then
-  git clone --depth 1 https://github.com/niklasf/galimatias
-  cd galimatias
-  mvn deploy -DaltDeploymentRepository="snapshot-repo::default::file:$repo_dir"
-  cd ..
+	git clone --depth 1 https://github.com/niklasf/galimatias
+	cd galimatias
+	mvn deploy -DaltDeploymentRepository="snapshot-repo::default::file:$repo_dir"
+	cd ..
+fi
+
+if [ -z $target ] || [ $target = "play-json" ]; then
+	git clone --depth 1 https://github.com/playframework/play-json --branch $branch
+	cd play-json
+	sbt -DpublishTo=$repo_dir '++ 3.3.0; publish'
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "play-ws" ]; then
-  git clone --depth 1 https://github.com/ornicar/play-ws --branch $branch
-  cd play-ws
-  sbt -DpublishTo=$repo_dir '++ 3.2.1; publish'
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/play-ws --branch $branch
+	cd play-ws
+	sbt -DpublishTo=$repo_dir '++ 3.2.2; publish'
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "playframework" ]; then
-  branch="${2:-main}"
-  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch $branch
-  cd playframework-lila
-  sbt 'publishLocal;publish'
-  cp -r ~/.ivy2/local/com.typesafe.play/sbt-plugin $repo_dir/com.typesafe.play/
-  cp -r ~/.ivy2/local/com.typesafe.play/play-exceptions $repo_dir/com.typesafe.play/
-  cp -r ~/.ivy2/local/com.typesafe.play/sbt-routes-compiler_2.12 $repo_dir/com.typesafe.play/
-  mv target/sonatype-staging/0.* target/sonatype-staging/0.1.0-SNAPSHOT
-  cp -r target/sonatype-staging/0.1.0-SNAPSHOT/* $repo_dir/
-  cd ..
+	branch="${2:-main}"
+	git clone --depth 1 https://github.com/ornicar/playframework-lila --branch $branch
+	cd playframework-lila
+	sbt 'publishLocal;publish'
+	cp -r ~/.ivy2/local/com.typesafe.play/sbt-plugin $repo_dir/com.typesafe.play/
+	cp -r ~/.ivy2/local/com.typesafe.play/play-exceptions $repo_dir/com.typesafe.play/
+	cp -r ~/.ivy2/local/com.typesafe.play/sbt-routes-compiler_2.12 $repo_dir/com.typesafe.play/
+	mv target/sonatype-staging/0.* target/sonatype-staging/0.1.0-SNAPSHOT
+	cp -r target/sonatype-staging/0.1.0-SNAPSHOT/* $repo_dir/
+	cd ..
 fi
 
 if [ -z $target ] || [ $target = "bloom-filter" ]; then
-  git clone --depth 1 https://github.com/ornicar/bloom-filter-scala --branch $branch
-  cd bloom-filter-scala
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
+	git clone --depth 1 https://github.com/ornicar/bloom-filter-scala --branch $branch
+	cd bloom-filter-scala
+	sbt -DpublishTo=$repo_dir +publish
+	cd ..
 fi
 
 rm -rf "$build_dir"
