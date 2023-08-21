@@ -131,4 +131,3 @@ cd $repo_dir
 git add .
 git commit -m "Publish $target $branch"
 git push
-
