@@ -30,6 +30,7 @@ if [ -z $target ] || [ $target = "scalachess" ]; then
 	git clone --depth 1 https://github.com/ornicar/scalachess --branch $branch
 	cd scalachess
 	sbt -DpublishTo=$repo_dir +publish
+	sbt -DpublishTo=$repo_dir +testKit/publish
 	cd ..
 fi
 
@@ -130,3 +131,4 @@ cd $repo_dir
 git add .
 git commit -m "Publish $target $branch"
 git push
+
