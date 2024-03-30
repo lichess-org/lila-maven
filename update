@@ -35,7 +35,7 @@ if [ -z $target ] || [ $target = "scalachess" ]; then
 fi
 
 if [ -z $target ] || [ $target = "scalalib" ]; then
-	git clone --depth 1 https://github.com/ornicar/scalalib --branch $branch
+	git clone --depth 1 https://github.com/lichech-org/scalalib --branch $branch
 	cd scalalib
 	sbt -DpublishTo=$repo_dir +publish
 	cd ..
