@@ -26,10 +26,10 @@
     <artifact name="lila-maven_2.12" type="pom" ext="pom" conf="pom"/>
   </publications>
   <dependencies>
-    <dependency org="org.scala-lang" name="scala-compiler" rev="2.12.17" conf="scala-tool-&gt;default"> </dependency>
-    <dependency org="org.scala-lang" name="scala-compiler" rev="2.12.17" conf="scala-tool-&gt;optional(default)"> </dependency>
-    <dependency org="org.scala-lang" name="scala-library" rev="2.12.17" conf="scala-tool-&gt;default"> </dependency>
-    <dependency org="org.scala-lang" name="scala-library" rev="2.12.17" conf="scala-tool-&gt;optional(default)"> </dependency>
-    <dependency org="org.scala-lang" name="scala-library" rev="2.12.17" conf="compile-&gt;default(compile)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.12.18" conf="scala-tool-&gt;default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.12.18" conf="scala-tool-&gt;optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.12.18" conf="scala-tool-&gt;default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.12.18" conf="scala-tool-&gt;optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.12.18" conf="compile-&gt;default(compile)"> </dependency>
   </dependencies>
 </ivy-module>
