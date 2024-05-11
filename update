@@ -125,6 +125,13 @@ if [ -z $target ] || [ $target = "bloom-filter" ]; then
 	cd ..
 fi
 
+if [ -z $target ] || [ $target = "lila-search" ]; then
+	git clone --depth 1 https://github.com/lichess-org/lila-search --branch $branch
+	cd lila-search
+	sbt -DpublishTo=$repo_dir +publish
+	cd ..
+fi
+
 rm -rf "$build_dir"
 
 cd $repo_dir
