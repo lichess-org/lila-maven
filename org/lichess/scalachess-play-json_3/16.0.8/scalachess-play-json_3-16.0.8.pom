@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.playframework</groupId>
             <artifactId>play-json_3</artifactId>
-            <version>3.0.3</version>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.lichess</groupId>
