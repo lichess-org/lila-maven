@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="default" module="lila-maven_2.12" revision="0.1.0-SNAPSHOT" status="integration" publication="20240418101753">
+  <info organisation="default" module="lila-maven_2.12" revision="0.1.0-SNAPSHOT" status="integration" publication="20241229142627">
     <description>lila-maven</description>
   </info>
   <configurations>
