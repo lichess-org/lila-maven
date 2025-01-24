@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="play-exceptions" revision="2.8.18-lila_3.19" status="integration" publication="20250124181343">
+  <info organisation="com.typesafe.play" module="play-exceptions" revision="2.8.18-lila_3.19" status="integration" publication="20250124182434">
     <description homepage="https://github.com/playframework/playframework">Play-Exceptions</description>
   </info>
   <configurations>
@@ -26,7 +26,7 @@
     <artifact name="play-exceptions" type="pom" ext="pom" conf="pom"/>
   </publications>
   <dependencies>
-    <dependency org="org.scala-lang" name="scala3-compiler_3" rev="3.3.1" conf="scala-tool->default(compile)"> </dependency>
-    <dependency org="org.scala-lang" name="scaladoc_3" rev="3.3.1" conf="scala-doc-tool->default(compile)"> </dependency>
+    <dependency org="org.scala-lang" name="scala3-compiler_3" rev="3.6.3" conf="scala-tool->default(compile)"> </dependency>
+    <dependency org="org.scala-lang" name="scaladoc_3" rev="3.6.3" conf="scala-doc-tool->default(compile)"> </dependency>
   </dependencies>
 </ivy-module>

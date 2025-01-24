@@ -20,9 +20,9 @@
         <url>https://playframework.com</url>
     </organization>
     <scm>
-        <url>https://github.com/ornicar/playframework-lila</url>
-        <connection>scm:git:https://github.com/ornicar/playframework-lila.git</connection>
-        <developerConnection>scm:git:git@github.com:ornicar/playframework-lila.git</developerConnection>
+        <url>https://github.com/lichess-org/playframework-lila</url>
+        <connection>scm:git:https://github.com/lichess-org/playframework-lila.git</connection>
+        <developerConnection>scm:git:git@github.com:lichess-org/playframework-lila.git</developerConnection>
     </scm>
     <developers>
         <developer>
