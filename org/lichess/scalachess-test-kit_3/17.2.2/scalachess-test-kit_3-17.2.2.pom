@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala3-library_3</artifactId>
-            <version>3.6.3</version>
+            <version>3.6.4</version>
         </dependency>
         <dependency>
             <groupId>org.scalacheck</groupId>

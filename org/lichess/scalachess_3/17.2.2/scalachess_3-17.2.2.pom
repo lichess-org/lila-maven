@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala3-library_3</artifactId>
-            <version>3.6.3</version>
+            <version>3.6.4</version>
         </dependency>
         <dependency>
             <groupId>org.lichess</groupId>
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.typelevel</groupId>
             <artifactId>kittens_3</artifactId>
-            <version>3.4.0</version>
+            <version>3.5.0</version>
         </dependency>
     </dependencies>
     <repositories>
