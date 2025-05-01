@@ -132,6 +132,13 @@ if [ -z $target ] || [ $target = "lila-search" ]; then
 	cd ..
 fi
 
+if [ -z $target ] || [ $target = "typemap" ]; then
+	git clone --depth 1 https://github.com/kraktus/TypeMap --branch $branch
+	cd TypeMap
+	sbt -DpublishTo=$repo_dir +publish
+	cd ..
+fi
+
 rm -rf "$build_dir"
 
 cd $repo_dir
