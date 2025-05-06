@@ -37,7 +37,7 @@ fi
 if [ -z $target ] || [ $target = "scalalib" ]; then
 	git clone --depth 1 https://github.com/lichess-org/scalalib --branch $branch
 	cd scalalib
-	sbt -DpublishTo=$repo_dir +publish
+	sbt sbt -java-home /opt/homebrew/opt/openjdk@21 -DpublishTo=$repo_dir +publish
 	cd ..
 fi
 
