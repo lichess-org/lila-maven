@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala3-library_3</artifactId>
-            <version>3.6.4</version>
+            <version>3.7.0</version>
         </dependency>
         <dependency>
             <groupId>org.typelevel</groupId>
