@@ -13,34 +13,6 @@ build_dir=$(mktemp -d)
 echo "Building in $build_dir"
 cd "$build_dir"
 
-java8() {
-  export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
-  java -version
-}
-java11() {
-  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
-  java -version
-}
-java14() {
-  export PATH="/usr/lib/jvm/java-14-openjdk/bin/:$PATH"
-  java -version
-}
-
-if [ -z $target ] || [ $target = "scalachess" ]; then
-  git clone --depth 1 https://github.com/ornicar/scalachess --branch $branch
-  cd scalachess
-  sbt -DpublishTo=$repo_dir +publish
-  sbt -DpublishTo=$repo_dir +testKit/publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "scalalib" ]; then
-  git clone --depth 1 https://github.com/lichess-org/scalalib --branch $branch
-  cd scalalib
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
-fi
-
 if [ -z $target ] || [ $target = "kamon-influxdb" ]; then
   git clone --depth 1 https://github.com/ornicar/Kamon-influxdb --branch lila
   cd Kamon-influxdb
@@ -51,28 +23,6 @@ fi
 if [ -z $target ] || [ $target = "geoip" ]; then
   git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
   cd maxmind-geoip2-scala
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "prismic" ]; then
-  git clone https://github.com/ornicar/scala-kit --branch $branch
-  cd scala-kit
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "compression" ]; then
-  git clone --depth 1 https://github.com/lichess-org/compression --branch $branch
-  cd compression
-  sbt -DpublishTo=$repo_dir publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "scrimage" ]; then
-  java8
-  git clone ~/scrimage --branch release/2.1.x
-  cd scrimage
   sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
@@ -123,20 +73,6 @@ fi
 if [ -z $target ] || [ $target = "bloom-filter" ]; then
   git clone --depth 1 https://github.com/ornicar/bloom-filter-scala --branch $branch
   cd bloom-filter-scala
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "lila-search" ]; then
-  git clone --depth 1 https://github.com/lichess-org/lila-search --branch $branch
-  cd lila-search
-  sbt -DpublishTo=$repo_dir +publish
-  cd ..
-fi
-
-if [ -z $target ] || [ $target = "typemap" ]; then
-  git clone --depth 1 https://github.com/kraktus/TypeMap --branch $branch
-  cd TypeMap
   sbt -DpublishTo=$repo_dir +publish
   cd ..
 fi
