@@ -13,51 +13,60 @@ build_dir=$(mktemp -d)
 echo "Building in $build_dir"
 cd "$build_dir"
 
-if [ -z $target ] || [ $target = "kamon-influxdb" ]; then
+if [ $target = "kamon-influxdb" ]; then
   git clone --depth 1 https://github.com/ornicar/Kamon-influxdb --branch lila
   cd Kamon-influxdb
   sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "geoip" ]; then
+if [ $target = "geoip" ]; then
   git clone --depth 1 https://github.com/ornicar/maxmind-geoip2-scala --branch customBuild
   cd maxmind-geoip2-scala
   sbt -DpublishTo=$repo_dir publish
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "hasher" ]; then
+if [ $target = "hasher" ]; then
   git clone --depth 1 https://github.com/ornicar/Hasher --branch $branch
   cd Hasher
   sbt -DpublishTo=$repo_dir +publish
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "galimatias" ]; then
+if [ $target = "galimatias" ]; then
   git clone --depth 1 https://github.com/niklasf/galimatias
   cd galimatias
   mvn deploy -DaltDeploymentRepository="snapshot-repo::default::file:$repo_dir"
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "play-json" ]; then
+if [ $target = "play-json" ]; then
   git clone --depth 1 https://github.com/playframework/play-json --branch main
   cd play-json
   sbt -DpublishTo=$repo_dir '++ 3.3.0; publish'
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "play-ws" ]; then
+if [ $target = "play-ws" ]; then
   git clone --depth 1 https://github.com/ornicar/play-ws --branch $branch
   cd play-ws
   sbt -DpublishTo=$repo_dir '++ 3.2.2; publish'
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "playframework" ]; then
-  branch="${2:-main}"
-  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch $branch
+if [ $target = "playframework" ]; then
+  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch scala3
+  cd playframework-lila
+  sbt 'publishLocal;publish'
+  cp -r ~/.ivy2/local/com.typesafe.play/play-exceptions $repo_dir/com.typesafe.play/
+  mv target/sonatype-staging/0.* target/sonatype-staging/0.1.0-SNAPSHOT
+  cp -r target/sonatype-staging/0.1.0-SNAPSHOT/* $repo_dir/
+  cd ..
+fi
+
+if [ $target = "play-routes" ]; then
+  git clone --depth 1 https://github.com/ornicar/playframework-lila --branch scala2
   cd playframework-lila
   # here we use `nix develop` to use java 17
   nix develop # in which you run the following command:
@@ -70,7 +79,7 @@ if [ -z $target ] || [ $target = "playframework" ]; then
   cd ..
 fi
 
-if [ -z $target ] || [ $target = "bloom-filter" ]; then
+if [ $target = "bloom-filter" ]; then
   git clone --depth 1 https://github.com/ornicar/bloom-filter-scala --branch $branch
   cd bloom-filter-scala
   sbt -DpublishTo=$repo_dir +publish
