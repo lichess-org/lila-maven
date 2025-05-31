@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.18-lila_1.26" status="integration" publication="20250516153928" e:sbtVersion="1.0" e:scalaVersion="2.12">
+  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.18-lila_1.26" status="integration" publication="20250531090431" e:sbtVersion="1.0" e:scalaVersion="2.12">
     <description homepage="https://github.com/playframework/playframework">Sbt-Plugin</description>
   </info>
   <configurations>
