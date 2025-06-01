@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="com.typesafe.play" module="sbt-plugin" revision="2.8.16-lila_1.17" status="integration" publication="20221107120914" e:sbtVersion="1.0" e:scalaVersion="2.12">
+    <description homepage="https://github.com/playframework/playframework">Sbt-Plugin</description>
+  </info>
+  <configurations>
+    <conf name="plugin" visibility="public" description=""/>
+    <conf name="pom" visibility="public" description=""/>
+    <conf extends="runtime" name="test" visibility="public" description=""/>
+    <conf name="provided" visibility="public" description=""/>
+    <conf extends="compile,optional,provided" name="compile-internal" visibility="public" description=""/>
+    <conf name="scripted-sbt" visibility="public" description=""/>
+    <conf name="docs" visibility="public" description=""/>
+    <conf name="optional" visibility="public" description=""/>
+    <conf name="compile" visibility="public" description=""/>
+    <conf extends="test,optional,provided" name="test-internal" visibility="public" description=""/>
+    <conf name="scala-tool" visibility="public" description=""/>
+    <conf name="scripted-sbt-launch" visibility="public" description=""/>
+    <conf name="scala-doc-tool" visibility="public" description=""/>
+    <conf name="sources" visibility="public" description=""/>
+    <conf extends="compile" name="runtime" visibility="public" description=""/>
+    <conf extends="runtime,optional" name="runtime-internal" visibility="public" description=""/>
+  </configurations>
+  <publications>
+    <artifact name="sbt-plugin" type="jar" ext="jar" conf="compile"/>
+    <artifact e:classifier="sources" name="sbt-plugin" type="src" ext="jar" conf="sources"/>
+    <artifact e:classifier="javadoc" name="sbt-plugin" type="doc" ext="jar" conf="docs"/>
+    <artifact name="sbt-plugin" type="pom" ext="pom" conf="pom"/>
+  </publications>
+  <dependencies>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.12.17" conf="scala-tool->default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.12.17" conf="scala-tool->optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.12.17" conf="scala-tool->default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.12.17" conf="scala-tool->optional(default)"> </dependency>
+    <dependency org="org.scala-sbt" name="sbt" rev="1.7.2" conf="provided->default(compile)"> </dependency>
+    <dependency org="com.typesafe.play" name="sbt-routes-compiler_2.12" rev="2.8.16-lila_1.17" conf="compile->default(compile)"> </dependency>
+    <dependency org="com.typesafe.play" name="play-exceptions" rev="2.8.16-lila_1.17" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.12.17" conf="provided->default(compile)"> </dependency>
+    <dependency org="org.scala-sbt" name="scripted-sbt_2.12" rev="1.7.2" conf="scripted-sbt->default(compile)"> </dependency>
+    <dependency org="org.scala-sbt" name="sbt-launch" rev="1.7.2" conf="scripted-sbt-launch->default(compile)"> </dependency>
+    <dependency org="com.typesafe" name="config" rev="1.4.2" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.slf4j" name="slf4j-simple" rev="2.0.3" conf="compile->default(compile)"> </dependency>
+    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.play" name="sbt-twirl" rev="1.6.0-M7" conf="compile->default(compile)"> </dependency>
+    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.github.sbt" name="sbt-native-packager" rev="1.9.11" conf="compile->default(compile)"> </dependency>
+    <dependency e:sbtVersion="1.0" e:scalaVersion="2.12" org="com.typesafe.sbt" name="sbt-web" rev="1.4.4" conf="compile->default(compile)"> </dependency>
+    <dependency org="ch.qos.logback" name="logback-classic" rev="1.4.4" conf="test->default(compile)"> </dependency>
+    <dependency org="org.specs2" name="specs2-core_2.12" rev="4.17.0" conf="test->default(compile)"> </dependency>
+    <dependency org="org.specs2" name="specs2-junit_2.12" rev="4.17.0" conf="test->default(compile)"> </dependency>
+    <dependency org="org.specs2" name="specs2-mock_2.12" rev="4.17.0" conf="test->default(compile)"> </dependency>
+  </dependencies>
+</ivy-module>
