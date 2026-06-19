@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="org.lichess.play" module="sbt-plugin_sbt2_3" revision="2.0.0-RC2" status="release" publication="20260619112640">
+    <description>Sbt-Plugin</description>
+  </info>
+  <configurations>
+    <conf name="plugin" visibility="public" description=""/>
+    <conf name="pom" visibility="public" description=""/>
+    <conf extends="runtime" name="test" visibility="public" description=""/>
+    <conf name="provided" visibility="public" description=""/>
+    <conf extends="compile,optional,provided" name="compile-internal" visibility="public" description=""/>
+    <conf name="scripted-sbt" visibility="public" description=""/>
+    <conf name="docs" visibility="public" description=""/>
+    <conf name="optional" visibility="public" description=""/>
+    <conf name="compile" visibility="public" description=""/>
+    <conf extends="test,optional,provided" name="test-internal" visibility="public" description=""/>
+    <conf name="scala-repl-tool" visibility="public" description=""/>
+    <conf name="scala-tool" visibility="public" description=""/>
+    <conf name="scripted-sbt-launch" visibility="public" description=""/>
+    <conf name="scala-doc-tool" visibility="public" description=""/>
+    <conf name="sources" visibility="public" description=""/>
+    <conf extends="compile" name="runtime" visibility="public" description=""/>
+    <conf extends="runtime,optional" name="runtime-internal" visibility="public" description=""/>
+  </configurations>
+  <publications>
+    <artifact name="sbt-plugin_sbt2_3" type="jar" ext="jar" conf="compile"/>
+    <artifact e:classifier="sources" name="sbt-plugin_sbt2_3" type="src" ext="jar" conf="sources"/>
+    <artifact e:classifier="javadoc" name="sbt-plugin_sbt2_3" type="doc" ext="jar" conf="docs"/>
+    <artifact name="sbt-plugin_sbt2_3" type="pom" ext="pom" conf="pom"/>
+  </publications>
+  <dependencies>
+    <dependency org="org.scala-lang" name="scala3-compiler_3" rev="3.8.4" conf="scala-tool->default(compile)"> </dependency>
+    <dependency org="org.scala-lang" name="scaladoc_3" rev="3.8.4" conf="scala-doc-tool->default(compile)"> </dependency>
+    <dependency org="org.scala-lang" name="scala3-repl_3" rev="3.8.4" conf="scala-repl-tool->default(compile)"> </dependency>
+    <dependency org="org.scala-sbt" name="sbt" rev="2.0.0" conf="provided->default(runtime)"> </dependency>
+    <dependency org="org.lichess.play" name="sbt-routes-compiler_3" rev="2.0.0-RC2" conf="compile->default(runtime)"> </dependency>
+    <dependency org="org.lichess.play" name="play-exceptions" rev="2.0.0-RC2" conf="compile->default(runtime)"> </dependency>
+    <dependency org="org.scala-lang" name="scala3-library_3" rev="3.8.4" conf="provided->default(runtime)"> </dependency>
+    <dependency org="org.scala-sbt" name="scripted-sbt_3" rev="2.0.0" conf="scripted-sbt->default(runtime)"> </dependency>
+    <dependency org="org.scala-sbt" name="sbt-launch" rev="2.0.0" conf="scripted-sbt-launch->default(runtime)"> </dependency>
+    <dependency org="com.typesafe" name="config" rev="1.4.2" conf="compile->default(runtime)"> </dependency>
+    <dependency org="org.slf4j" name="slf4j-simple" rev="2.0.3" conf="compile->default(runtime)"> </dependency>
+    <dependency org="org.playframework.twirl" name="sbt-twirl_sbt2_3" rev="2.1.0-M9" conf="compile->default(runtime)"> </dependency>
+    <dependency org="com.github.sbt" name="sbt-native-packager_sbt2_3" rev="1.11.4" conf="compile->default(runtime)"> </dependency>
+    <dependency org="ch.qos.logback" name="logback-classic" rev="1.4.4" conf="test->default(runtime)"> </dependency>
+    <dependency org="org.specs2" name="specs2-core_3" rev="4.17.0" conf="test->default(runtime)"> </dependency>
+    <dependency org="org.specs2" name="specs2-junit_3" rev="4.17.0" conf="test->default(runtime)"> </dependency>
+    <dependency org="com.sourcegraph" name="semanticdb-javac" rev="0.11.2" conf="compile-internal->default(runtime)"> </dependency>
+    <dependency org="com.sourcegraph" name="semanticdb-javac" rev="0.11.2" conf="test-internal->default(runtime)"> </dependency>
+  </dependencies>
+</ivy-module>
