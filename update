@@ -79,6 +79,16 @@ if [ $target = "play-routes" ]; then
   cd ..
 fi
 
+if [ $target = "sbt-play" ]; then
+  git clone --depth 1 https://github.com/lichess-org/playframework-lila --branch $branch
+  cd playframework-lila
+  sbt 'publishLocal'
+  cp -r ~/.ivy2/local/org.lichess.play/sbt-plugin_sbt2_3 $repo_dir/org.lichess.play/
+  cp -r ~/.ivy2/local/org.lichess.play/play-exceptions $repo_dir/org.lichess.play/
+  cp -r ~/.ivy2/local/org.lichess.play/sbt-routes-compiler_3 $repo_dir/org.lichess.play/
+  cd ..
+fi
+
 if [ $target = "bloom-filter" ]; then
   git clone --depth 1 https://github.com/ornicar/bloom-filter-scala --branch $branch
   cd bloom-filter-scala
@@ -96,6 +106,6 @@ fi
 rm -rf "$build_dir"
 
 cd $repo_dir
-git add .
-git commit -m "Publish $target $branch"
-git push
+# git add .
+# git commit -m "Publish $target $branch"
+# git push
