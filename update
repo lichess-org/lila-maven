@@ -34,6 +34,13 @@ if [ $target = "hasher" ]; then
   cd ..
 fi
 
+if [ $target = "scalachess" ]; then
+  git clone --depth 1 https://github.com/lichess-org/scalachess --branch $branch
+  cd scalachess
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
+
 if [ $target = "galimatias" ]; then
   git clone --depth 1 https://github.com/niklasf/galimatias
   cd galimatias
