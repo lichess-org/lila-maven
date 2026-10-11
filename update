@@ -41,6 +41,13 @@ if [ $target = "scalachess" ]; then
   cd ..
 fi
 
+if [ $target = "scalalib" ]; then
+  git clone --depth 1 https://github.com/lichess-org/scalalib --branch $branch
+  cd scalalib
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
+
 if [ $target = "galimatias" ]; then
   git clone --depth 1 https://github.com/niklasf/galimatias
   cd galimatias
