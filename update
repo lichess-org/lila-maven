@@ -48,6 +48,13 @@ if [ $target = "scalalib" ]; then
   cd ..
 fi
 
+if [ $target = "TypeMap" ]; then
+  git clone --depth 1 https://github.com/lichess-org/TypeMap --branch $branch
+  cd TypeMap
+  sbt -DpublishTo=$repo_dir +publish
+  cd ..
+fi
+
 if [ $target = "galimatias" ]; then
   git clone --depth 1 https://github.com/niklasf/galimatias
   cd galimatias
